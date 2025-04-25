@@ -17,17 +17,49 @@ body {
     background-color: var(--background-color);
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
 }
 
 .coming-soon {
     text-align: center;
     padding: 2rem;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 80vh;
 }
 
 .content {
     max-width: 600px;
+    text-align: left;
+}
+
+.video-container {
+    flex: 1;
+    max-width: 500px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 44px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    display: block;
 }
 
 .app-icon {
@@ -52,18 +84,34 @@ h1 {
 
 .app-store-button {
     display: inline-block;
-    background-color: var(--primary-color);
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 0.75rem 1.5rem;
-    border-radius: 8px;
-    transition: background-color 0.2s;
     margin-bottom: 2rem;
 }
 
-.app-store-button:hover {
-    background-color: #19c5b8;
+.app-store-button img {
+    height: 48px;
+    transition: transform 0.2s;
+}
+
+.app-store-button:hover img {
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #f5f5f5;
+    border-top: 1px solid #eee;
+}
+
+footer a {
+    color: #666;
+    text-decoration: none;
+    transition: color 0.2s;
+    font-size: 0.9rem;
+}
+
+footer a:hover {
+    color: var(--primary-color);
 }
 
 .contact-text {
@@ -78,6 +126,26 @@ h1 {
 
 .contact-text a:hover {
     color: var(--primary-color);
+}
+
+@media (max-width: 1024px) {
+    .content-wrapper {
+        flex-direction: column;
+        gap: 2rem;
+        min-height: auto;
+    }
+
+    .content {
+        text-align: center;
+    }
+
+    .video-container {
+        max-width: 100%;
+    }
+
+    .video-container video {
+        max-height: 60vh;
+    }
 }
 
 @media (max-width: 768px) {
