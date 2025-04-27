@@ -1,6 +1,6 @@
 [build]
   publish = "."
-
+ 
 [[headers]]
   for = "/.well-known/apple-app-site-association"
   [headers.values]

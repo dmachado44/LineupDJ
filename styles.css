@@ -2,6 +2,8 @@
     --primary-color: #1DDDCE;
     --text-color: #1C1C1E;
     --background-color: #FFFFFF;
+    --light-gray: #f5f5f5;
+    --border-color: #eee;
 }
 
 * {
@@ -52,7 +54,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f5f5f5;
+    background-color: var(--light-gray);
 }
 
 .video-container video {
@@ -96,11 +98,68 @@ h1 {
     transform: scale(1.05);
 }
 
+.faq-section {
+    padding: 4rem 2rem;
+    background-color: var(--light-gray);
+    margin-top: 4rem;
+}
+
+.faq-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1rem;
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none; /* Remove default marker */
+}
+
+.faq-question::-webkit-details-marker {
+    display: none; /* Hide default arrow in Safari */
+}
+
+.faq-question::after {
+    content: '+';
+    font-size: 1.5rem;
+    transition: transform 0.2s;
+}
+
+details[open] > .faq-question::after {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    padding: 0 0 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
 footer {
     text-align: center;
     padding: 1.5rem;
-    background-color: #f5f5f5;
-    border-top: 1px solid #eee;
+    background-color: var(--light-gray);
+    border-top: 1px solid var(--border-color);
 }
 
 footer a {
@@ -146,6 +205,10 @@ footer a:hover {
     .video-container video {
         max-height: 60vh;
     }
+
+    .faq-section {
+        margin-top: 2rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -155,5 +218,149 @@ footer a:hover {
     
     .tagline {
         font-size: 1.25rem;
+    }
+
+    .faq-section h2 {
+        font-size: 2rem;
+    }
+
+    .faq-question {
+        font-size: 1.1rem;
+    }
+}
+
+/* Blog Section on Homepage */
+.blog-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.blog-preview {
+    margin-top: 1rem;
+}
+
+.blog-card {
+    display: block;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: var(--light-gray);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-2px);
+    background: #f1f3f5;
+}
+
+.blog-card h3 {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-color);
+}
+
+.blog-card p {
+    margin: 0 0 1rem 0;
+    color: #666;
+}
+
+.read-more {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* Blog Post Page Styles */
+.blog-nav {
+    background: var(--background-color);
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+}
+
+.nav-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 0.5rem;
+    border-radius: 8px;
+}
+
+.blog-post {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.post-meta {
+    color: #666;
+    margin-bottom: 2rem;
+}
+
+.reading-time {
+    margin-left: 1rem;
+}
+
+.blog-post h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.blog-post h2 {
+    font-size: 1.75rem;
+    margin: 2rem 0 1rem;
+}
+
+.blog-post h3 {
+    font-size: 1.25rem;
+    margin: 1.5rem 0 1rem;
+}
+
+.blog-post p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.blog-post ul, 
+.blog-post ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+.blog-post li {
+    margin-bottom: 0.5rem;
+}
+
+.cta-box {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.cta-box p {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .blog-post h1 {
+        font-size: 2rem;
+    }
+    
+    .blog-post h2 {
+        font-size: 1.5rem;
+    }
+    
+    .blog-post h3 {
+        font-size: 1.1rem;
     }
 } 
