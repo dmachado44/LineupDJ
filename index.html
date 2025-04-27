@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-itunes-app" content="app-id=6743953226, app-argument=lineupdj://share/">
+    <meta property="al:ios:url" content="lineupdj://share/">
+    <meta property="al:ios:app_store_id" content="6743953226">
+    <meta property="al:ios:app_name" content="Lineup DJ">
+    <!-- End of new lines -->
+    <title>Lineup DJ - Create Unforgettable Game-Day Moments</title>
     <title>Lineup DJ - Create Unforgettable Game-Day Moments</title>
     <link rel="icon" type="image/png" href="images/newblue1024x1024.png">
     <link rel="apple-touch-icon" href="images/newblue1024x1024.png">
@@ -74,5 +80,26 @@
         <a href="mailto:hello@danmachado.com">Contact Us</a> | 
         <a href="privacy.html">Privacy Policy</a>
     </footer>
+    <script>
+        // Handle shared lineup links
+        function handleSharedLineup() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const lineupId = urlParams.get('id');
+            
+            if (lineupId && window.location.pathname.startsWith('/share/')) {
+                // Try to open the app first
+                window.location.href = `lineupdj://share/${lineupId}`;
+                
+                // If app doesn't open after 1 second, redirect to App Store
+                setTimeout(() => {
+                    window.location.href = 'https://apps.apple.com/us/app/lineup-dj/id6743953226';
+                }, 1000);
+            }
+        }
+        
+        // Run when page loads
+        document.addEventListener('DOMContentLoaded', handleSharedLineup);
+    </script>
+</body>
 </body>
 </html> 
