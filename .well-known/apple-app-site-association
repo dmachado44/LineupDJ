@@ -1,11 +1,9 @@
-    {
-        "applinks": {
-            "apps": [],
-            "details": [
-                {
-                    "appID": "9572234H5U.com.danmachado.LineupDJ",
-                    "paths": [ "/share/*" ]
-                }
-            ]
-        }
+{
+    "applinks": {
+        "apps": [],
+        "details": [{
+            "appID": "9572234H5U.com.danmachado.LineupDJ",
+            "paths": ["/lineup/*"]
+        }]
     }
+}
