@@ -210,24 +210,22 @@
         </footer>
     </div>
 
-    <script type="module">
-        // Import Firebase
-        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
-        import { getFirestore, doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
+<script type="module">
+    // Import Firebase
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
+    import { getFirestore, doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
 
-        // Initialize Firebase
-        const firebaseConfig = {
-            // Your Firebase config here
-            apiKey: "YOUR_API_KEY",
-            authDomain: "your-app.firebaseapp.com",
-            projectId: "your-project-id",
-            storageBucket: "your-app.appspot.com",
-            messagingSenderId: "your-sender-id",
-            appId: "your-app-id"
-        };
+    // Initialize Firebase
+    const firebaseConfig = {
+        apiKey: "AIzaSyBouFf3vINrxuUlk-VRTNhrl4Zt6rl8tqA",
+        projectId: "lineup-dj",
+        storageBucket: "lineup-dj.firebasestorage.app",
+        messagingSenderId: "192098052577",
+        appId: "1:192098052577:ios:a3bf35c7f6bd09e0180aa0"
+    };
 
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
 
         // Get the lineup ID from the URL
         const lineupId = window.location.pathname.split('/').pop();
