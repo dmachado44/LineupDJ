@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Lineup DJ - Shared Lineup</title>
+    <link rel="icon" type="image/png" href="/assets/icon.png">
+    <meta name="apple-itunes-app" content="app-id=6743953226">
+    <style>
+        :root {
+            --app-color: #00D1B2;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: env(safe-area-inset-top, 20px) env(safe-area-inset-right, 20px) env(safe-area-inset-bottom, 20px) env(safe-area-inset-left, 20px);
+            min-height: 100vh;
+            background-color: #f5f5f7;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 600px;
+            width: 90%;
+            background: white;
+            padding: 40px 30px;
+            border-radius: 24px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            margin: 20px;
+        }
+        
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 25%;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            color: #1d1d1f;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        
+        p {
+            color: #515154;
+            line-height: 1.6;
+            margin-bottom: 32px;
+            font-size: 17px;
+        }
+        
+        .app-store-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--app-color);
+            color: white;
+            text-decoration: none;
+            padding: 16px 32px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 17px;
+            transition: all 0.2s ease;
+            gap: 8px;
+        }
+        
+        .app-store-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            background-color: #00bfa5;
+        }
+        
+        .app-store-button:active {
+            transform: translateY(0);
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #1c1c1e;
+            }
+            
+            .container {
+                background-color: #2c2c2e;
+            }
+            
+            h1 {
+                color: #ffffff;
+            }
+            
+            p {
+                color: #98989d;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="/assets/icon.png" alt="Lineup DJ" class="app-icon">
+        <h1>Someone shared a lineup with you!</h1>
+        <p>To view and import this lineup, you'll need to download Lineup DJ from the App Store. Once installed, come back to this link to view the shared lineup.</p>
+        <a href="https://apps.apple.com/us/app/lineup-dj/id6743953226" class="app-store-button">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.885 4.49499C15.845 3.29499 16.485 1.69499 16.305 0.0949902C14.885 0.184991 13.155 1.09499 12.165 2.29499C11.265 3.39499 10.485 5.00499 10.695 6.57499C12.265 6.69499 13.905 5.69499 14.885 4.49499Z" fill="currentColor"/>
+                <path d="M16.7851 6.75499C14.9351 6.60499 13.3551 7.75499 12.5151 7.75499C11.6551 7.75499 10.2851 6.81499 8.7451 6.84499C6.7151 6.87499 4.8351 7.97499 3.8251 9.72499C1.7451 13.275 3.2351 18.375 5.2551 21.075C6.2551 22.395 7.4251 23.865 8.9751 23.805C10.4651 23.745 11.0351 22.815 12.8251 22.815C14.5851 22.815 15.1251 23.805 16.6851 23.775C18.2851 23.745 19.3051 22.425 20.2951 21.105C21.4351 19.575 21.9051 18.075 21.9351 17.985C21.8751 17.955 18.6451 16.815 18.6151 13.305C18.5851 10.365 21.1851 8.94499 21.2751 8.88499C19.8451 6.81499 17.6251 6.75499 16.7851 6.75499Z" fill="currentColor"/>
+            </svg>
+            Download on the App Store
+        </a>
+    </div>
+</body>
+</html> 
