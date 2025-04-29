@@ -83,10 +83,12 @@
     <script>
 // Handle shared lineup links
 function handleSharedLineup() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const lineupId = urlParams.get('id');
-    
-    if (lineupId && window.location.pathname.startsWith('/share/')) {
+    // Extract the ID from the path instead of query parameters
+    const pathParts = window.location.pathname.split('/');
+    // Check if the path follows /l/{id} format
+    if (pathParts.length >= 3 && pathParts[1] === 'l') {
+        const lineupId = pathParts[2];
+        
         // Try to open the app first with the correct URL format
         window.location.href = `lineupdj://l/${lineupId}`;
         
