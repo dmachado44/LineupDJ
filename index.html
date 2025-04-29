@@ -88,7 +88,7 @@ function handleSharedLineup() {
     
     if (lineupId && window.location.pathname.startsWith('/share/')) {
         // Try to open the app first with the correct URL format
-        window.location.href = `lineupdj://l/${lineupId}`;
+        window.location.href = `lineupdj.app://l/${lineupId}`;
         
         // If app doesn't open after 1 second, redirect to App Store
         setTimeout(() => {
