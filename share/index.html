@@ -217,7 +217,7 @@
 
     // Initialize Firebase
     const firebaseConfig = {
-        apiKey: "AIzaSyBouFf3vINrxuUlk-VRTNhrl4Zt6rl8tqA",
+        apiKey: process.env.FIREBASE_API_KEY,
         projectId: "lineup-dj",
         storageBucket: "lineup-dj.firebasestorage.app",
         messagingSenderId: "192098052577",
@@ -227,6 +227,7 @@
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
+    // Rest of your existing code...
         // Get the lineup ID from the URL
         const lineupId = window.location.pathname.split('/').pop();
 
