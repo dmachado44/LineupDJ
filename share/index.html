@@ -1,6 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- ... (keep all the existing head content and styles) ... -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Lineup DJ - Shared Lineup</title>
+    
+    <!-- Favicon settings -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon.png">
+    
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="Lineup DJ - Shared Lineup">
+    <meta property="og:description" content="View and import this team's player intros and walkout songs">
+    <meta property="og:image" content="https://lineupdj.app/assets/icon.png">
+    <meta property="og:url" content="https://lineupdj.app">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Lineup DJ - Shared Lineup">
+    <meta name="twitter:description" content="View and import this team's player intros and walkout songs">
+    <meta name="twitter:image" content="https://lineupdj.app/assets/icon.png">
+    
+    <meta name="apple-itunes-app" content="app-id=6743953226">
+    <style>
+        /* ... rest of your existing styles ... */
+    </style>
+</head>
 <body>
     <div class="container">
         <header class="header">
@@ -63,106 +89,11 @@
                 showError("Error loading lineup");
             }
         }
-    // Rest of your existing code...
-        // Get the lineup ID from the URL
-        const lineupId = window.location.pathname.split('/').pop();
 
-        async function fetchLineup() {
-            try {
-                const docRef = doc(db, "shared_lineups", lineupId);
-                const docSnap = await getDoc(docRef);
-
-                if (docSnap.exists()) {
-                    const data = docSnap.data();
-                    const lineup = JSON.parse(new TextDecoder().decode(data.lineup));
-                    const expiresAt = data.expires_at.toDate();
-
-                    if (expiresAt < new Date()) {
-                        showError("This shared lineup has expired");
-                        return;
-                    }
-
-                    renderLineup(lineup);
-                } else {
-                    showError("Lineup not found");
-                }
-            } catch (error) {
-                console.error("Error fetching lineup:", error);
-                showError("Error loading lineup");
-            }
-        }
-
-        function renderLineup(lineup) {
-            const content = document.getElementById('content');
-            
-            // Create team info section
-            const teamInfo = `
-                <div class="team-info">
-                    <h2 class="team-name">${lineup.teamName}</h2>
-                    <p>${lineup.activePlayers.length + lineup.inactivePlayers.length} Players</p>
-                </div>
-            `;
-
-            // Create active players section
-            const activePlayers = lineup.activePlayers
-                .sort((a, b) => a.position - b.position)
-                .map(player => createPlayerCard(player))
-                .join('');
-
-            // Create inactive players section
-            const inactivePlayers = lineup.inactivePlayers
-                .map(player => createPlayerCard(player))
-                .join('');
-
-            // Combine all sections
-            content.innerHTML = `
-                ${teamInfo}
-                <h3>Active Players (${lineup.activePlayers.length})</h3>
-                <ul class="lineup-list">
-                    ${activePlayers}
-                </ul>
-                ${lineup.inactivePlayers.length > 0 ? `
-                    <h3>Inactive Players (${lineup.inactivePlayers.length})</h3>
-                    <ul class="lineup-list">
-                        ${inactivePlayers}
-                    </ul>
-                ` : ''}
-                <a href="lineupdj://" class="cta-button">Open in Lineup DJ</a>
-            `;
-        }
-
-        function createPlayerCard(player) {
-            return `
-                <li class="player-card">
-                    ${player.number ? `<div class="player-number">#${player.number}</div>` : ''}
-                    <div class="player-info">
-                        <div class="player-name">${player.name}</div>
-                        ${player.songTitle ? `
-                            <div class="song-info">
-                                ${player.songTitle}
-                                ${player.songArtist ? `<br>${player.songArtist}` : ''}
-                            </div>
-                        ` : ''}
-                    </div>
-                </li>
-            `;
-        }
-
-        function showError(message) {
-            const content = document.getElementById('content');
-            content.innerHTML = `
-                <div class="error">
-                    <p>${message}</p>
-                    <p>Download Lineup DJ to create and share your own lineups</p>
-                </div>
-                <a href="https://apps.apple.com/us/app/lineup-dj/id6743953226" class="cta-button">
-                    Download on the App Store
-                </a>
-            `;
-        }
+        // ... (keep all the existing helper functions) ...
 
         // Start loading the lineup
         fetchLineup();
     </script>
 </body>
-</html>
+</html> 
