@@ -1,199 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Lineup DJ - Shared Lineup</title>
-    
-    <!-- Favicon settings -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon.png">
-    
-    <!-- Open Graph meta tags -->
-    <meta property="og:title" content="Lineup DJ - Shared Lineup">
-    <meta property="og:description" content="View and import this team's player intros and walkout songs">
-    <meta property="og:image" content="https://lineupdj.app/assets/icon.png">
-    <meta property="og:url" content="https://lineupdj.app">
-    <meta property="og:type" content="website">
-    
-    <!-- Twitter Card meta tags -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Lineup DJ - Shared Lineup">
-    <meta name="twitter:description" content="View and import this team's player intros and walkout songs">
-    <meta name="twitter:image" content="https://lineupdj.app/assets/icon.png">
-    
-    <meta name="apple-itunes-app" content="app-id=6743953226">
-    <style>
-        :root {
-            --primary-color: #007AFF;
-            --secondary-color: #5856D6;
-            --background-color: #F2F2F7;
-            --card-background: #FFFFFF;
-            --text-primary: #000000;
-            --text-secondary: #6C6C6C;
-            --border-radius: 12px;
-            --spacing-sm: 8px;
-            --spacing-md: 16px;
-            --spacing-lg: 24px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: var(--background-color);
-            color: var(--text-primary);
-            line-height: 1.5;
-            padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            padding: var(--spacing-md);
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: var(--spacing-lg);
-            padding: var(--spacing-lg) 0;
-        }
-
-        .app-logo {
-            width: 80px;
-            height: 80px;
-            border-radius: var(--border-radius);
-            margin-bottom: var(--spacing-md);
-        }
-
-        .team-info {
-            background: var(--card-background);
-            border-radius: var(--border-radius);
-            padding: var(--spacing-lg);
-            margin-bottom: var(--spacing-lg);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .team-name {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .lineup-list {
-            list-style: none;
-        }
-
-        .player-card {
-            background: var(--card-background);
-            border-radius: var(--border-radius);
-            padding: var(--spacing-md);
-            margin-bottom: var(--spacing-md);
-            display: flex;
-            align-items: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-        }
-
-        .player-number {
-            font-size: 18px;
-            font-weight: 600;
-            min-width: 40px;
-        }
-
-        .player-info {
-            flex-grow: 1;
-        }
-
-        .player-name {
-            font-weight: 600;
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .song-info {
-            color: var(--text-secondary);
-            font-size: 14px;
-        }
-
-        .cta-button {
-            display: block;
-            width: 100%;
-            background: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: var(--spacing-md);
-            border-radius: var(--border-radius);
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: var(--spacing-lg);
-            transition: background-color 0.2s ease;
-        }
-
-        .cta-button:hover {
-            background: var(--secondary-color);
-        }
-
-        .loading {
-            text-align: center;
-            padding: var(--spacing-lg);
-            color: var(--text-secondary);
-        }
-
-        .error {
-            background: #FFE5E5;
-            color: #D00000;
-            padding: var(--spacing-md);
-            border-radius: var(--border-radius);
-            margin: var(--spacing-lg) 0;
-            text-align: center;
-        }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: var(--spacing-sm);
-            }
-
-            .team-info {
-                padding: var(--spacing-md);
-            }
-
-            .player-card {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .player-number {
-                margin-bottom: var(--spacing-sm);
-            }
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --background-color: #000000;
-                --card-background: #1C1C1E;
-                --text-primary: #FFFFFF;
-                --text-secondary: #8E8E93;
-            }
-        }
-
-        .footer {
-            text-align: center;
-            padding: var(--spacing-lg) 0;
-            color: var(--text-secondary);
-            font-size: 14px;
-        }
-
-        .footer a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-    </style>
-</head>
+<!-- ... (keep all the existing head content and styles) ... -->
 <body>
     <div class="container">
         <header class="header">
@@ -210,23 +17,52 @@
         </footer>
     </div>
 
-<script type="module">
-    // Import Firebase
-    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
-    import { getFirestore, doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
+    <script type="module">
+        // Import Firebase
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js';
+        import { getFirestore, doc, getDoc } from 'https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js';
 
-    // Initialize Firebase
-    const firebaseConfig = {
-        apiKey: process.env.FIREBASE_API_KEY,
-        projectId: "lineup-dj",
-        storageBucket: "lineup-dj.firebasestorage.app",
-        messagingSenderId: "192098052577",
-        appId: "1:192098052577:ios:a3bf35c7f6bd09e0180aa0"
-    };
+        // Initialize Firebase with environment variable
+        const firebaseConfig = {
+            apiKey: process.env.FIREBASE_API_KEY,
+            authDomain: "lineup-dj.firebaseapp.com",
+            projectId: "lineup-dj",
+            storageBucket: "lineup-dj.firebasestorage.app",
+            messagingSenderId: "192098052577",
+            appId: "1:192098052577:web:d9680431d67a99c4180aa0",
+            measurementId: "G-KXT1VTWZL6"
+        };
 
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
 
+        // Get the lineup ID from the URL
+        const lineupId = window.location.pathname.split('/').pop();
+
+        async function fetchLineup() {
+            try {
+                const docRef = doc(db, "shared_lineups", lineupId);
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    const data = docSnap.data();
+                    const lineup = JSON.parse(new TextDecoder().decode(data.lineup));
+                    const expiresAt = data.expires_at.toDate();
+
+                    if (expiresAt < new Date()) {
+                        showError("This shared lineup has expired");
+                        return;
+                    }
+
+                    renderLineup(lineup);
+                } else {
+                    showError("Lineup not found");
+                }
+            } catch (error) {
+                console.error("Error fetching lineup:", error);
+                showError("Error loading lineup");
+            }
+        }
     // Rest of your existing code...
         // Get the lineup ID from the URL
         const lineupId = window.location.pathname.split('/').pop();
